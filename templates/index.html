@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ title }} - Shop</title>
+</head>
+<body>
+    <h1 id="heading">Shopping Orders</h1>
+    {% for order in orders %}
+    <div class="orders">
+        <p><u>{{ order.customer_name }}</u><br>Order Date: {{ order.order_date }}<br>Item(s): {{ order.item }}<br>Quantity: {{ order.quantity }}</p>
+    </div>
+    {% endfor %}
+    <nav>
+        <ul id="list">
+            <li><a href="http://127.0.0.1:5001/orders/0">Order 1</a></li>
+            <li><a href="http://127.0.0.1:5001/orders/1">Order 2</a></li>
+            <li><a href="http://127.0.0.1:5001/orders/2">Order 3</a></li>
+            <li><a href="http://127.0.0.1:5001/orders/3">Order 4</a></li>
+            <li><a href="http://127.0.0.1:5001/orders/4">Order 5</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
